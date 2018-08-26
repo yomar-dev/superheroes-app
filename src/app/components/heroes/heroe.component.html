@@ -1,3 +1,32 @@
-<p>
-  heroe works!
-</p>
+<h3>Hero</h3>
+<button [routerLink]="['/home']" class="btn btn-secondary">Back</button>
+<hr>
+
+<div class="row">
+    <div class="col-md-12">
+        <form>
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" placeholder="name" required>
+            </div>
+
+            <div class="form-group">
+                <label>House</label>
+                <select name="house" class="form-control">
+                    <option value="DC">DC</option>
+                    <option value="Marvel">Marvel</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Bio</label>
+                <textarea name="" rows="6" class="form-control" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-primary">Add hero</button>
+            </div>
+        </form>
+    </div>
+</div>
+
