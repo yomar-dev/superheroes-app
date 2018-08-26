@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
 export class HeroesService {
 
   herosURL = 'https://superheroes-app.firebaseio.com/heros.json';
+  heroURL = 'https://superheroes-app.firebaseio.com/heros';
 
   constructor(private http: HttpClient) { }
 
@@ -17,6 +18,16 @@ export class HeroesService {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
     return this.http.post(this.herosURL, body, { headers }).pipe(map( res => {
+      return res;
+    }));
+  }
+
+  updateHero(hero: Hero, key$: string) {
+    const body = JSON.stringify(hero);
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const URL = `${ this.heroURL }/${ key$ }.json`;
+
+    return this.http.put(URL, body, { headers }).pipe(map( res => {
       return res;
     }));
   }
