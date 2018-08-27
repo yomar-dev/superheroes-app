@@ -36,4 +36,8 @@ export class HeroesService {
     const URL = `${ this.heroURL }/${ key$ }.json`;
     return this.http.get(URL).pipe(map(data => data));
   }
+
+  getHeros() {
+    return this.http.get(this.herosURL).pipe(map(data => data));
+  }
 }

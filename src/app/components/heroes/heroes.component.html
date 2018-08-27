@@ -22,11 +22,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr *ngFor="let k of heros | keys; let i = index">
+                        <th>{{ i+1 }}</th>
+                        <td>{{ heros[k].name }}</td>
+                        <td>{{ heros[k].house }}</td>
+                        <td>Edit / Delete</td>
                     </tr>
                 </tbody>
             </table>
