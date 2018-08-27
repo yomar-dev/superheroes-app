@@ -9,10 +9,12 @@ import { Hero } from '../../interfaces/hero.interface';
 })
 export class HeroesComponent implements OnInit {
   heros: any;
+  loading = true;
 
   constructor(private _heroesService: HeroesService) {
     this._heroesService.getHeros().subscribe(data => {
       this.heros = data;
+      this.loading = false;
     });
   }
 

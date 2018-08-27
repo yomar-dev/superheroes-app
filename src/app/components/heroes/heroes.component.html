@@ -33,6 +33,14 @@
                     </tr>
                 </tbody>
             </table>
+
+            <div *ngIf="(heros | keys).length === 0 && !loading" class="alert alert-info text-center">
+                Heros not found.
+            </div>
+
+            <div *ngIf="loading" class="alert alert-warning text-center">
+                <strong>Loading...</strong>
+            </div>
         </div>
     </div>
 </div>
